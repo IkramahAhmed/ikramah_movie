@@ -1,4 +1,5 @@
 'use client';
+'use client';
 import { useState, useEffect } from 'react';
 import Card from './components/Card';
 import { fetchMoviePosters } from '../../utils/requests';
@@ -47,19 +48,23 @@ export default function HomePage() {
           <SkeletonTheme color="#202020" highlightColor="#444">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {Array.from({ length: moviesPerPage }).map((_, index) => (
-                <Skeleton key={index} height={350} duration={2} width={190} />
+                <div key={index} className="flex flex-col bg-white p-4 rounded-lg shadow-lg">
+                  <Skeleton height={300} duration={2} className="mb-4 rounded-t-lg mx-auto w-[94%]" />
+                  <Skeleton height={10} width={150} duration={2} className="mb-2" />
+                  <Skeleton height={10} width={100} duration={2} className="mb-2" />
+                  <Skeleton height={10} width={120} duration={2} />
+                </div>
               ))}
             </div>
           </SkeletonTheme>
         ) : (
           <div className="max-w-7xl object-cover rounded-t-lg mb-6">
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-14 p-2">
-    {currentMovies.map((movie) => (
-      <Card key={movie.id} movie={movie} className="" />
-    ))}
-  </div>
-</div>
-
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-14 ">
+              {currentMovies.map((movie) => (
+                <Card key={movie.id} movie={movie} className="" />
+              ))}
+            </div>
+          </div>
         )}
         <div className="flex justify-center mt-4 ml-2">
           <button
@@ -75,7 +80,7 @@ export default function HomePage() {
             onClick={nextPage}
             disabled={indexOfLastMovie >= movies.length - 1}
             className={`px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-900 text-white rounded-md mr-2 ${
-             indexOfLastMovie >= movies.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-orange-600'
+              indexOfLastMovie >= movies.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-orange-600'
             }`}
           >
             Next
@@ -85,4 +90,5 @@ export default function HomePage() {
     </>
   );
 }
+
 
