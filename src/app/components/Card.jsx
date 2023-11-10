@@ -16,7 +16,7 @@ function Card({ movie }) {
               alt=""
               className="w-full h-auto object-cover rounded-t-lg"
             />
-            <div className="absolute top-2 right-2">
+            <div className="absolute top-2 right-3">
               <div className="w-12 h-12 bg-gradient-to-tr  from-orange-500 to-orange-900 rounded-full text-white flex items-center justify-center text-2xl -mt-6 -mr-6">
                 {roundedRating}
               </div>
