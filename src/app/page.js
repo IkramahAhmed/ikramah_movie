@@ -13,7 +13,6 @@ export default function HomePage() {
 
   useEffect(() => {
     async function fetchMovies() {
-      // Simulate a loading delay for 3 seconds
       setTimeout(async () => {
         const movieData = await fetchMoviePosters();
         setMovies(movieData);
@@ -27,13 +26,13 @@ export default function HomePage() {
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
   const currentMovies = movies.slice(indexOfFirstMovie, indexOfLastMovie);
 
-  const handlePreviousPage = () => {
+  const previousPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
   };
 
-  const handleNextPage = () => {
+  const nextPage = () => {
     if (indexOfLastMovie < movies.length - 1) {
       setCurrentPage(currentPage + 1);
     }
@@ -64,7 +63,7 @@ export default function HomePage() {
         )}
         <div className="flex justify-center mt-4 ml-2">
           <button
-            onClick={handlePreviousPage}
+            onClick={previousPage}
             disabled={currentPage === 1}
             className={`px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-900 text-white rounded-md mr-2 ${
               currentPage === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-orange-600'
@@ -73,7 +72,7 @@ export default function HomePage() {
             Previous
           </button>
           <button
-            onClick={handleNextPage}
+            onClick={nextPage}
             disabled={indexOfLastMovie >= movies.length - 1}
             className={`px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-900 text-white rounded-md mr-2 ${
              indexOfLastMovie >= movies.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-orange-600'

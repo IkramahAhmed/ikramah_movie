@@ -1,6 +1,5 @@
 "use client"
 
-// Import necessary modules
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
@@ -13,12 +12,11 @@ function SearchResults({ searchText, movies }) {
   const [searchError, setSearchError] = useState(false);
 
   useEffect(() => {
-    // Simulate loading delay
     setTimeout(() => {
       const filtered = movies.slice(0, itemsPerPage);
       setFilteredMovies(filtered);
       setLoading(false);
-      setSearchError(filtered.length === 0); // Set error if no movies found
+      setSearchError(filtered.length === 0); 
     }, 2000);
   }, [movies]);
 

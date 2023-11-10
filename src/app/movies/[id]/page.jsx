@@ -5,15 +5,6 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const IMAGE_BASE_URL = 'https://www.themoviedb.org/t/p/w220_and_h330_face';
 
-const MovieDetailItem = ({ label, value }) => (
-  <p className="py-1 px-2 bg-warning text-white rounded">
-    <span className="font-semibold">{label}</span>: {value}
-  </p>
-);
-
-const GenreTag = ({ name }) => (
-  <span className="py-1 px-2 bg-dark text-white me-2 ml-1 mb-2 rounded">{name}</span>
-);
 
 
 
@@ -28,7 +19,6 @@ const GenreTag = ({ name }) => (
           const details = await getMovieDetails(params.id);
           const similar = await getSimilarMovies(params.id);
   
-          // Simulate a 2-second delay before rendering actual content
           setTimeout(() => {
             setMovieDetails(details);
             setSimilarMovies(similar);
@@ -147,77 +137,3 @@ const GenreTag = ({ name }) => (
 export default MovieDetailsPage;
 
 
-// return (
-//   <div className="my-6 mx-8 mt-28">
-//     <div className="flex flex-wrap items-center">
-//       <div className="w-full md:w-1/3">
-//         <img
-//           src={IMAGE_BASE_URL + movieDetails.backdrop_path}
-//           alt={movieDetails.title}
-//           className="w-full rounded-md shadow-lg"
-//         />
-//       </div>
-//       <div className="w-full md:w-2/3 p-4 flex flex-col">
-//         <h3 className="text-3xl font-bold mb-4">{movieDetails.title}</h3>
-//         <div className="flex mb-4">
-//           <div className="w-1/2 md:w-1/3">
-//             <p className="py-1 px-2 bg-warning text-white rounded">
-//               <span className="font-semibold">Release Date</span>
-//             </p>
-//             <p className="py-1 px-2 bg-warning text-white rounded">
-//               <span className="font-semibold">Movie Status</span>
-//             </p>
-//             <p className="py-1 px-2 bg-warning text-white rounded">
-//               <span className="font-semibold">Language</span>
-//             </p>
-//             <p className="py-1 px-2 bg-warning text-white rounded">
-//               <span className="font-semibold">Run Time</span>
-//             </p>
-//             <p className="py-1 px-2 bg-warning text-white rounded">
-//               <span className="font-semibold">Rating</span>
-//             </p>
-//             <p className="py-1 px-2 bg-warning text-white rounded">
-//               <span className="font-semibold">Genre</span>
-//             </p>
-//           </div>
-//           <div className="w-1/2 md:w-2/3">
-//             <p className="py-1 px-2 bg-warning text-white rounded">
-//             <span>:</span>  {movieDetails.release_date}
-//             </p>
-//             <p className="py-1 px-2 bg-warning text-white rounded">
-//             <span>:</span>   {movieDetails.status}
-//             </p>
-//             <p className="py-1 px-2 bg-warning text-white rounded">
-//             <span>:</span>   {movieDetails.original_language}
-//             </p>
-//             <p className="py-1 px-2 bg-warning text-white rounded">
-//             <span>:</span>   {movieDetails.runtime}
-//             </p>
-//             <p className="py-1 px-2 bg-warning text-white rounded">
-//             <span>:</span>   {movieDetails.vote_average}
-//             </p>
-//             <div className="">
-        
-//           <div className="flex flex-wrap py-1 px-2">
-//           <span className="">:</span>
-//             {movieDetails.genres.map((genre) => (
-              
-//               <span
-//                 className=" bg-dark text-white me-2 ml-1 mb-2 rounded"
-//                 key={genre.id}
-//               >
-//                 {genre.name}
-//               </span>
-//             ))}
-//           </div>
-//         </div>
-//           </div>
-//         </div>
-     
-//         <h3 className="text-xl font-bold ml-2">Storyline:</h3>
-//         <p className="ml-2">{movieDetails.overview}</p>
-//       </div>
-//     </div>
-//   </div>
-// );
-// }

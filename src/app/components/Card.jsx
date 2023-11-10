@@ -4,7 +4,6 @@ import Skeleton from "react-loading-skeleton";
 function Card({ movie }) {
   const IMAGE_BASE_URL = "https://www.themoviedb.org/t/p/w220_and_h330_face";
 
-  // Round the vote_average to two decimal places
   const roundedRating = movie.vote_average.toFixed(1);
 
   return (

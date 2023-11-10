@@ -7,7 +7,6 @@ export default function Hero() {
     const [movie, setMovie] = useState(null);
 
     useEffect(() => {
-        // Function to get trending movies should be called here, not accessed like an array
         const fetchTrendingMovies = async () => {
             try {
                 const trendingMovies = await fetchMoviePosters();
@@ -19,7 +18,7 @@ export default function Hero() {
         };
 
         fetchTrendingMovies();
-    }, []); // Empty dependency array to fetch a new random movie on component mount
+    }, []); 
 
     return (
         <div className="">
