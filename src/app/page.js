@@ -41,7 +41,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <div className="container my-3 mt-10 md:m-28 p-8 md:p-0">
+      <div className="container my-3 mt-10  mx-auto w-[94%]  md:p-0">
         <h1 className="text-2xl font-semibold mb-4">Top Trending Movies</h1>
         {isLoading ? (
           <SkeletonTheme color="#202020" highlightColor="#444">
@@ -52,8 +52,8 @@ export default function HomePage() {
             </div>
           </SkeletonTheme>
         ) : (
-          <div className="w-full h-auto object-cover rounded-t-lg mb-6">
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-14  ">
+          <div className="max-w-7xl object-cover rounded-t-lg mb-6">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-14 p-2">
     {currentMovies.map((movie) => (
       <Card key={movie.id} movie={movie} className="" />
     ))}
@@ -85,3 +85,4 @@ export default function HomePage() {
     </>
   );
 }
+
