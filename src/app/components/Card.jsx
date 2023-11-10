@@ -18,7 +18,7 @@ function Card({ movie }) {
               className="w-full h-auto object-cover rounded-t-lg"
             />
             <div className="absolute top-2 right-2">
-              <div className="w-12 h-12 bg-gradient-to-tr from-orange-500 to-red-300 rounded-full text-white flex items-center justify-center text-2xl -mt-6 -mr-6">
+              <div className="w-12 h-12 bg-gradient-to-tr  from-orange-500 to-orange-900 rounded-full text-white flex items-center justify-center text-2xl -mt-6 -mr-6">
                 {roundedRating}
               </div>
             </div>
@@ -32,7 +32,7 @@ function Card({ movie }) {
               {movie.title}
             </h5>
           ) : (
-            <Skeleton height={20} width={180} />
+            <Skeleton height={20} width={80} />
           )}
           {movie.release_date ? (
             <p className="text-black">{movie.release_date}</p>
