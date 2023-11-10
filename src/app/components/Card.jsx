@@ -8,7 +8,7 @@ function Card({ movie }) {
 
   return (
     <Link href={`/movies/${movie.id}`} className="text-decoration-none">
-      <div className="bg-white rounded-lg shadow-md relative transition-transform hover:scale-105">
+      <div className="bg-white rounded-lg shadow-md relative transition-transform hover:scale-105 mb-4 mt-4">
         {movie.poster_path ? (
           <div className="relative">
             <img
