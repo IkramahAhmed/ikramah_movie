@@ -114,8 +114,8 @@ const IMAGE_BASE_URL = 'https://www.themoviedb.org/t/p/w220_and_h330_face';
             </div>
           </div>
         ) : (
-          <div className="flex flex-wrap items-center">
-            <Skeleton width={370} height={600} className="w-full md:w-1/3 rounded-md shadow-lg" />
+           <div className="flex flex-wrap items-center ">
+            <Skeleton  width={300} height={600}  className="w-full md:w-1/3 md:w[100px] p-8  rounded-md shadow-lg" />
             <div className="w-full md:w-2/3 p-4">
               <Skeleton height={30} width={150} className="mt-6 mb-4" />
               <Skeleton height={15} width={300} className="mb-4" />
@@ -125,7 +125,7 @@ const IMAGE_BASE_URL = 'https://www.themoviedb.org/t/p/w220_and_h330_face';
               <Skeleton height={15} width={300} className="mb-4" />
               <Skeleton height={15} width={300} className="mb-4" />
 
-              <Skeleton height={120} width={380} className="mb-4" />
+              <Skeleton height={120} width={600} className="mb-4 md:mt-7" />
             </div>
           </div>
         )}
