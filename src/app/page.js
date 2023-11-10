@@ -42,7 +42,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <div className="container my-3 mt-10  mx-auto w-[94%]  md:p-0">
+      <div className="container my-3 mt-10  mx-auto w-[94%]   p-4">
         <h1 className="text-2xl font-semibold mb-4">Top Trending Movies</h1>
         {isLoading ? (
           <SkeletonTheme color="#202020" highlightColor="#444">
