@@ -111,8 +111,9 @@ function SearchResults({ searchText, movies }) {
           {searchError ? (
             <p>No movie Found</p>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-14 sm:m-2 p-4 mb-4">
-              {filteredMovies.map((movie) => (
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-14 sm:m-2 p-4
+            max-w-7xl mx-auto w-[94%] mb-4">       
+  {filteredMovies.map((movie) => (
                 // Check if the movie has a poster image
                 movie.poster_path ? (
                   <Card key={movie.id} movie={movie} />
